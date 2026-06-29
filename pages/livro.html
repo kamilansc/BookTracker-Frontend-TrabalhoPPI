@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro</title>
+        
+    <script defer src = "../javascript/components/clock.js"></script>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/livro.css">
+</head>
+<body>
+
+  <header>
+    <section class="header-center">
+      <h1>Rastreador de Leitura</h1>
+      <time id="clock"></time>
+      <a href="../index.html" id="voltarInicio">
+          &larr; Início
+      </a>
+      <div class="header-right">
+        <img class="user-icon" src="../assets/images/profile-user-icon-png.png">
+      </div>
+    </section>
+  </header>
+
+<main>
+   <section class="card-infLivro">
+
+    <div class="card-img">
+      <img class="img-liv-aberto" src="../assets/images/icone-livro-estrela.png" alt="Livro aberto">
+    </div>
+
+    <div class="lado-direito">
+      <div class="barra-progresso">
+        <div class="progresso"></div>
+      </div>
+
+        <div class="dados-livro">
+
+            <div class="campo titulo">
+                <span class="label">Título:</span>
+                <span class="valor" id="titulo"></span>
+            </div>
+
+            <div class="campo autor">
+                <span class="label">Autor(a):</span>
+                <span class="valor" id="autor"></span>
+            </div>
+
+            <div class="campo genero">
+                <span class="label">Gênero:</span>
+                <span class="valor" id="genero"></span>
+            </div>
+
+            <div class="campo paginas">
+                <span class="label">Quantidade de páginas:</span>
+                <span class="valor" id="qtdPag"></span>
+            </div>
+
+            <div class="campo inicio">
+                <span class="label">Data de início:</span>
+                <span class="valor" id="dtInicio"></span>
+            </div>
+
+            <div class="campo fim">
+                <span class="label">Data de fim:</span>
+                <span class="valor" id="dtFim"></span>
+            </div>
+
+        </div>
+        <div class="botoes">
+          <button class="btn">Atualizar</button>
+          <button class="btn">Remover</button>
+          <button class="btn">Adicionar Sessão</button>
+        </div>
+    </div>
+
+</section>
+<section class="card-opiniao">
+
+    <button class="btn-opiniao">
+        ⌄ O que eu achei da leitura ⌄
+    </button>
+
+    <div class="conteudo-opiniao">
+        <div id="opiniao"></div>
+    </div>
+
+</section>
+<div id="listaSessoes"></div>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+    
+</html>
