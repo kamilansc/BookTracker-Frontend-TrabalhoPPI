@@ -26,7 +26,9 @@ async function carregarLivro() {
     qSelector("#dtInicio").textContent = formatarData(livroAtual.comecouEm);
     qSelector("#dtFim").textContent = livroAtual.terminouEm
       ? formatarData(livroAtual.terminouEm)
-      : "Em andamento";
+      : livroAtual.comecouEm
+        ? "Em andamento"
+        : "-";
     qSelector("#opiniao").textContent =
       livroAtual.opiniao ?? "Sem opinião cadastrada.";
   } catch (error) {
@@ -117,8 +119,6 @@ function atualizarBarraProgresso(sessoes) {
   let porcentagem = Math.round((totalLido / livroAtual.qtdPaginas) * 100);
 
   qSelector(".progresso").style.width = `${porcentagem}%`;
-  console.log(porcentagem);
-
   qSelector("#porcentagem").textContent = `${porcentagem}%`;
 }
 

@@ -4,10 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livro</title>
+  <title>Rastreador de Leitura</title>
 
   <script defer src="../javascript/components/clock.js"></script>
   <script defer src="../javascript/components/livro.js"></script>
+  <script type="module" src="../javascript/pages/livro.js">
+
+  </script>
   <script defer src="../javascript/components/tema.js"></script>
 
   <link rel="stylesheet" href="../css/global.css">
@@ -78,17 +81,15 @@
           </div>
 
           <div class="campo fim">
-            <span class="label">Data de fim:</span>
+            <span class="label">Data de término:</span>
             <span id="dtFim"></span>
           </div>
 
         </div>
-        <div class="botoes">
-          <button class="btn" id="botao-atualizar">Atualizar</button>
-          <button class="btn" id="botao-remover">Remover</button>
-          <button class="btn" id="botao-adicionarSessao">Adicionar Sessão</button>
-        </div>
       </div>
+
+      <button class="botao-remover" id="botao-remover">
+        <img src="../assets/images/icons8-trash-25.png" alt=""></button>
 
     </section>
     <section class="card-opiniao">
@@ -105,10 +106,17 @@
 
     </section>
 
-    <div id="listaSessoes"></div>
+    <section class="sessao-sessoes-leitura">
+      <div class="sessao-sessoes-leitura-head">
+        <h2>Minhas Sessões de Leitura</h2>
+        <button id="botao-criar-sessao">+ Criar Sessão</button>
+      </div>
+      <div id="listaSessoes"></div>
+    </section>
+
   </main>
 
-  <div class="modal-overlay ativo" id="form-adicionar-sessao">
+  <div class="modal-overlay" id="form-adicionar-sessao">
     <div class="modal adicionar">
       <div class="modal-header-adicionar">
         <div class="foto">
@@ -120,7 +128,7 @@
         </div>
       </div>
       <div>
-        <form id="form-sessao" class="form-sessao">
+        <form id="form-criar-sessao" class="form-sessao">
           <div class="campo2">
             <label for="paginas">Quantidade de páginas lidas:</label>
 
@@ -151,10 +159,12 @@
   </div>
 
 
-  <div class="modal-overlay">
-    <div class="modal">
+  <div class="modal-overlay" id="modal-deletar-livro">
+    <div class="modal excluir">
       <div class="modal-header">
-        <img src="../assets/images/icons8-trash-50.png" alt="icon lixeira">
+        <div class="foto">
+          <img src="../assets/images/icons8-trash-50.png" alt="icon lixeira">
+        </div>
         <div class="modal-header-text">
           <p>Deletar livro</p>
           <p>Esta ação não poderá ser desfeita.</p>
@@ -170,7 +180,65 @@
     </div>
   </div>
 
+  <div class="modal-overlay" id="modal-registrar-opiniao">
+    <div class="modal adicionar">
+      <div class="modal-header-adicionar">
+        <div>
+          <img src="../assets/images/icons8-review.png" alt="icon opiniao">
+        </div>
+        <div class="modal-header-text">
+          <p>Registar Opinião</p>
+          <p>Parabéns! Você concluiu o livro.</p>
+        </div>
+      </div>
+
+      <div>
+        <form id="form-editar-livro" class="form-editar-sessao">
+          <div class="campo-estrela">
+            <label>Sua nota para o livro:</label>
+
+            <div class="rating">
+              <input type="radio" name="nota" id="star5" value="5">
+              <label for="star5">★</label>
+
+              <input type="radio" name="nota" id="star4" value="4">
+              <label for="star4">★</label>
+
+              <input type="radio" name="nota" id="star3" value="3">
+              <label for="star3">★</label>
+
+              <input type="radio" name="nota" id="star2" value="2">
+              <label for="star2">★</label>
+
+              <input type="radio" name="nota" id="star1" value="1" required>
+              <label for="star1">★</label>
+            </div>
+          </div>
+
+          <div class="campo2">
+            <label for="comentario">Opinião:</label>
+
+            <textarea class="input" id="comentario" name="opiniao" rows="8" maxlength="1000"
+              placeholder="Escreva sua opinião sobre o livro lido..."></textarea>
+          </div>
+
+
+          <div class="botoes-modal-adicionar">
+            <button type="button" id="btn-cancelar-editar-livro" class="btn-modal">
+              Cancelar
+            </button>
+
+            <button type="submit" id="btn-editar-livro" class="btn-modal roxo">
+              Registrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <footer>
+    <p>Book Tracker • 2026</p>
   </footer>
 </body>
 

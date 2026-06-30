@@ -18,8 +18,6 @@ export function criarCard(livro, progresso) {
 
             <div class="book-buttons">
                 <button onclick="irParaSessoes(${livro.id})">Sessões</button>
-                <button>Editar</button>
-                <button>Nova Sessão</button>
             </div>
         </div> 
     `;

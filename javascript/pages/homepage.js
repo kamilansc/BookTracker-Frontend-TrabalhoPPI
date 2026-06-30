@@ -1,17 +1,9 @@
 import {
+  adicionarLivro,
   buscarIdLivro,
   buscarLivros,
   buscarSessoesLivro,
   buscarUltimaSessao,
-} from "../api/livro.js";
-import {
-  atualizarCardUltimaSessao,
-  criarCard,
-} from "../components/homepage.js";
-import {
-  buscarLivros,
-  buscarUltimaSessao,
-  adicionarLivro,
 } from "../api/livro.js";
 import {
   atualizarCardUltimaSessao,
@@ -26,11 +18,10 @@ async function renderizarLivros() {
   const livros = await buscarLivros();
 
   const container = document.getElementById("books-grid");
+  if (!container) return;
+
   container.innerHTML = "";
 
-  livros.forEach((livro) => {
-    container.innerHTML += criarCard(livro);
-  });
   for (let livro of livros) {
     let idLivro = await buscarIdLivro(livro.titulo);
     let sessoes = await buscarSessoesLivro(idLivro);
@@ -48,6 +39,7 @@ async function renderizarLivros() {
 async function renderizarUltimaSessao() {
   const ultimaSessao = await buscarUltimaSessao();
 
+  if (!ultimaSessao) return;
   atualizarCardUltimaSessao(ultimaSessao);
 }
 
@@ -64,23 +56,30 @@ const formularioAdicao = qSelector("#form-livro");
 const botaoCancelarAdicao = qSelector("#btn-cancelar-adicao");
 const modalFormAdicao = qSelector("#form-adicionar-livro");
 
-formularioAdicao.addEventListener("submit", async (event) => {
-  event.preventDefault();
+if (formularioAdicao) {
+  formularioAdicao.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-  const dados = new FormData(formularioAdicao);
+    const dados = new FormData(formularioAdicao);
 
-  const livro = Object.fromEntries(dados.entries());
+    const livro = Object.fromEntries(dados.entries());
 
-  livro.paginas = Number(livro.paginas);
-  await adicionarLivro(livro);
-  formularioAdicao.reset();
-});
+    livro.qtdPaginas = Number(livro.qtdPaginas);
+    await adicionarLivro(livro);
+    formularioAdicao.reset();
+  });
+}
 
-botaoCancelarAdicao.addEventListener("click", () => {
-  formularioAdicao.reset();
-  qSelector("#form-adicionar-livro").classList.remove("ativo");
-});
+if (botaoCancelarAdicao && formularioAdicao && modalFormAdicao) {
+  botaoCancelarAdicao.addEventListener("click", () => {
+    formularioAdicao.reset();
+    modalFormAdicao.classList.remove("ativo");
+    window.location.reload();
+  });
+}
 
-botaoAdicionarLivro.addEventListener("click", () => {
-  modalFormAdicao.classList.add("ativo");
-});
+if (botaoAdicionarLivro && modalFormAdicao) {
+  botaoAdicionarLivro.addEventListener("click", () => {
+    modalFormAdicao.classList.add("ativo");
+  });
+}
