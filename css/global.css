@@ -17,7 +17,7 @@
 
     --padding-sm: 1.5rem;
     --padding-md: 2rem;
-    --padding-lg: 5rem;
+    --padding-lg: 10rem;
 }
 
 header, footer {
@@ -76,8 +76,11 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     padding: var(--padding-md) var(--padding-lg);
+    gap: var(--padding-md);
 }
 
 /* Footer */

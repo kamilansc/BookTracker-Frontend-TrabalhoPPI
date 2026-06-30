@@ -6,7 +6,10 @@
     <title>Rastreador de Leitura</title>
 
     <script defer src = "javascript/components/clock.js"></script>
+    <script type="module" src = "javascript/pages/homepage.js"></script>
+    
     <link rel="stylesheet" href="\css\global.css">
+    <link rel="stylesheet" href="\css\homepage.css">  
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,14 +30,42 @@
 
     <main>
         <section class="last-session">
+            <div class="session-header">
+                <div class="session-title">
+                    <div class="session-icon">
+                        <img class="session-img-icon" src="assets\images\session-icon.png">
+                    </div>
+                    <h2>Última sessão registrada</h2>
+                </div>
 
+                <a href="index.html">
+                    <img class="session-img-icon" src="assets\images\book-icon.png">
+                </a>
+            </div>
+
+            <div class="session-info">
+                <time id="session-date"></time>
+                <p id="session-pages"></p>
+            </div>
+
+            <div class="session-user-comment">
+                <p id="session-comment"></p>
+            </div>
         </section>
 
-        <section class="books"></section>
+        <section class="books">
+            <div class="books-header">
+                <h2>Meus Livros</h2>
+                <div class="books-line"></div>
+                <button>Adicionar Livro</button>
+            </div>
+
+            <div class="books-grid" id="books-grid"></div>
+        </section>
     </main>
 
     <footer>
-        <p>Biblioteca Virtual • 2026</p>
+        <p>Book Tracker • 2026</p>
     </footer>
 </body>
 </html>
