@@ -281,3 +281,50 @@ h2 {
 
     font-weight:500;
 }
+
+.header-left { 
+    position: absolute; 
+    top: 50%; 
+    left: 44px; 
+    transform: translateY(-50%); 
+    display: flex; 
+    flex-direction: column; 
+    gap: .8rem; 
+    align-items: center; 
+} 
+
+body.dark h2, 
+body.dark .book-title { 
+    color: var(--on-surface); 
+} 
+
+body.dark .last-session, 
+body.dark .book-card { 
+    background: #1F1F1F; 
+    border: 2px solid #444; 
+} 
+
+body.dark .session-info, 
+body.dark .book-author, 
+body.dark .book-genre { 
+    color: var(--text-muted); 
+} 
+
+body.dark .session-user-comment, 
+body.dark .book-buttons button { 
+    background: #2D2D2D; 
+    color: var(--on-surface); 
+} 
+
+body.dark .books-line {
+    background: #444; 
+} 
+
+body.dark .session-icon {
+    border-color: #444; 
+}
+
+body.dark .book-buttons button:hover {
+     background: #3A3A3A; 
+     color: #8F7DFF; 
+}

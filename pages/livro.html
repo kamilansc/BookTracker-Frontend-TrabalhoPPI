@@ -7,23 +7,28 @@
         
     <script defer src = "../javascript/components/clock.js"></script>
     <script defer src="../javascript/components/livro.js"></script>
+    <script defer src="../javascript/components/tema.js"></script>
+
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/livro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
 
   <header>
-    <section class="header-center">
+    <div class="header-center">
       <h1>Rastreador de Leitura</h1>
       <time id="clock"></time>
-      <a href="../index.html" id="voltarInicio">
-          &larr; Início
-      </a>
-      <div class="header-right">
-        <img class="user-icon" src="../assets/images/profile-user-icon-png.png">
-      </div>
-    </section>
-  </header>
+    </div>
+    <div class="header-right"> 
+      <img class="user-icon" src="../assets/images/profile-user-icon-png.png"> 
+    </div>
+
+    <div class="header-left"> 
+      <a href="../index.html" id="voltarInicio">&larr; Início</a> 
+      <i id="btnTema" class="bi bi-moon-stars-fill"></i> 
+    </div> 
+</header>
 
 <main>
    <section class="card-infLivro">
@@ -79,7 +84,7 @@
         <div class="botoes">
           <button class="btn" id="botao-atualizar">Atualizar</button>
           <button class="btn" id="botao-remover">Remover</button>
-          <button class="btn" id="botao-dicionarSessao">Adicionar Sessão</button>
+          <button class="btn" id="botao-adicionarSessao">Adicionar Sessão</button>
         </div>
     </div>
 

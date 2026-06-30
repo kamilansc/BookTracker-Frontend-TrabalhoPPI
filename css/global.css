@@ -12,17 +12,18 @@
 
     --on-surface: #2D2545;
     --text-muted: #5E5774;
+    --borda-hf: #DDD5FF;
 
     --radius-sm: 25px;
 
     --padding-sm: 1.5rem;
     --padding-md: 2rem;
-    --padding-lg: 10rem;
+    --padding-lg: 5rem;
 }
 
 header, footer {
     background-color: var(--surface);
-    border: 2px solid #DDD5FF;
+    border: 2px solid var(--borda-hf);
     padding: var(--padding-sm);
 
     display: flex;
@@ -76,11 +77,8 @@ body {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
     flex: 1;
     padding: var(--padding-md) var(--padding-lg);
-    gap: var(--padding-md);
 }
 
 /* Footer */
@@ -92,3 +90,29 @@ footer p {
   color: var(--text-muted);
   font-size: 0.875rem;
 }
+
+body.dark {
+    --background: #121212;
+    --surface: #1F1F1F;
+    --on-surface: #E8E6F2;
+    --text-muted: #C7C7C7;
+}
+
+body.dark header,
+body.dark footer {
+    border-color: #444;
+}
+
+#btnTema {
+    font-size: 1.5rem;
+    color: #8F7DFF;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#btnTema:hover {
+    color: #6F5CFF;
+    transform: scale(1.1);
+} 
+
+

@@ -7,18 +7,25 @@ main {
   gap: 1.2rem;
 }
 
-#voltarInicio {
-  position: absolute;
-  top: 40px;
-  left: 44px;
-
-  color: var(--on-surface);
-  text-decoration: none;
-  cursor: pointer;
+.header-left { 
+  position: absolute; 
+  top: 50%; 
+  left: 44px; 
+  transform: translateY(-50%); 
+  display: flex; 
+  flex-direction: column; 
+  gap: .8rem; 
+  align-items: center; 
 }
 
-#voltarInicio:hover {
-  color: var(--text-muted);
+#voltarInicio { 
+  color: var(--on-surface); 
+  text-decoration: none; 
+  cursor: pointer; 
+} 
+
+#voltarInicio:hover { 
+  color: var(--text-muted); 
 }
 
 .card-infLivro {
@@ -384,4 +391,144 @@ main {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
+}
+
+@media (max-width: 992px) {
+  .card-infLivro {
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .card-opiniao,
+  .sessoes-leitura {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-infLivro {
+    width: 85%;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 1.5rem;
+  }
+
+  .card-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card-img img {
+    width: 75%;
+  }
+
+  .lado-direito {
+    flex: 1;
+  }
+
+  .dados-livro {
+    grid-template-columns: 1fr;
+    row-gap: 0.8rem;
+  }
+
+  .titulo,
+  .paginas {
+    grid-column: auto;
+  }
+
+  .campo {
+    align-items: flex-start;
+  }
+
+  .botoes {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-infLivro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .card-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .lado-direito,
+  .container-progresso {
+    width: 100%;
+  }
+
+  .dados-livro {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo,
+  .paginas {
+    grid-column: auto;
+  }
+
+  .campo {
+    justify-content: flex-start;
+  }
+
+  .botoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Tema escuro */
+body.dark .card-infLivro,
+body.dark .sessoes-leitura,
+body.dark .sem-sessoes,
+body.dark .modal {
+  background: #1F1F1F;
+  border-color: #444;
+}
+
+body.dark .card-img,
+body.dark .sessao-img,
+body.dark .comentario-sessao {
+  background: #2D2D2D;
+}
+
+body.dark .dados-livro,
+body.dark .dados-sessao,
+body.dark .opiniao,
+body.dark .sessaoLeitura,
+body.dark .campo,
+body.dark .modal-msg,
+body.dark .modal-header {
+  color: var(--on-surface);
+}
+
+body.dark .card-opiniao {
+  background: transparent;
+}
+
+body.dark .btn-opiniao,
+body.dark .conteudo-opiniao {
+  background: #1F1F1F;
+  color: var(--on-surface);
+  border: 2px solid #444;
+}
+
+body.dark .conteudo-opiniao p,
+body.dark #opiniao {
+  color: var(--on-surface);
+}
+
+body.dark .btn:hover {
+  background: #3A3A3A;
+  color: #8F7DFF;
 }
