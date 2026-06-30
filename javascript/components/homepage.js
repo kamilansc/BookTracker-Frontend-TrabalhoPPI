@@ -1,9 +1,5 @@
-function Qselector(q) {
-    return document.querySelector(q);
-}
-
 export function criarCard(livro, progresso) {
-    return `
+  return `
         <div class="book-card">
             <div class="book-header">
                 <img class="book-icon" src='assets/images/book-icon.png'>
@@ -26,17 +22,16 @@ export function criarCard(livro, progresso) {
                 <button>Nova Sessão</button>
             </div>
         </div> 
-    `
+    `;
 }
 
 export function atualizarCardUltimaSessao(ultimaSessao) {
-    const campoData = document.getElementById("session-date");
-    const campoPages = document.getElementById("session-pages");
-    const campoComment = document.getElementById("session-comment");
+  const campoData = document.getElementById("session-date");
+  const campoPages = document.getElementById("session-pages");
+  const campoComment = document.getElementById("session-comment");
 
-    const data = new Date(ultimaSessao.dataSessao).toLocaleDateString("pt-BR");
-    campoData.innerText = `Data da sessão: ${data}`;
-    campoPages.innerText = `${ultimaSessao.qtdPaginas} páginas lidas`;
-    campoComment.innerText = ultimaSessao.comentario;
+  const data = new Date(ultimaSessao.dataSessao).toLocaleDateString("pt-BR");
+  campoData.innerText = `Data da sessão: ${data}`;
+  campoPages.innerText = `${ultimaSessao.qtdPaginas} páginas lidas`;
+  campoComment.innerText = ultimaSessao.comentario;
 }
-

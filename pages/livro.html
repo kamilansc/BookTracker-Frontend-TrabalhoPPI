@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livro</title>
-        
-    <script defer src = "../javascript/components/clock.js"></script>
-    <script defer src="../javascript/components/livro.js"></script>
-    <script defer src="../javascript/components/tema.js"></script>
 
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/livro.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livro</title>
+
+  <script defer src="../javascript/components/clock.js"></script>
+  <script defer src="../javascript/components/livro.js"></script>
+  <script defer src="../javascript/components/tema.js"></script>
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/livro.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
+
 <body>
 
   <header>
@@ -20,65 +22,65 @@
       <h1>Rastreador de Leitura</h1>
       <time id="clock"></time>
     </div>
-    <div class="header-right"> 
-      <img class="user-icon" src="../assets/images/profile-user-icon-png.png"> 
+    <div class="header-right">
+      <img class="user-icon" src="../assets/images/profile-user-icon-png.png">
     </div>
 
-    <div class="header-left"> 
-      <a href="../index.html" id="voltarInicio">&larr; Início</a> 
-      <i id="btnTema" class="bi bi-moon-stars-fill"></i> 
-    </div> 
-</header>
-
-<main>
-   <section class="card-infLivro">
-
-    <div class="card-img">
-      <img class="img-liv-aberto" src="../assets/images/icone-livro-estrela.png" alt="Livro aberto">
+    <div class="header-left">
+      <a href="../index.html" id="voltarInicio">&larr; Início</a>
+      <i id="btnTema" class="bi bi-moon-stars-fill"></i>
     </div>
+  </header>
 
-    <div class="lado-direito">
-      <div class="container-progresso">
+  <main>
+    <section class="card-infLivro">
+
+      <div class="card-img">
+        <img class="img-liv-aberto" src="../assets/images/icone-livro-estrela.png" alt="Livro aberto">
+      </div>
+
+      <div class="lado-direito">
+        <div class="container-progresso">
 
           <div class="barra-progresso">
-              <div class="progresso"></div>
+            <div class="progresso"></div>
           </div>
 
           <span id="porcentagem">0%</span>
 
-      </div>
+        </div>
 
         <div class="dados-livro">
 
-            <div class="campo titulo">
-                <span class="label">Título:</span>
-                <span class="valor" id="titulo"></span>
-            </div>
+          <div class="campo titulo">
+            <span class="label">Título:</span>
+            <span class="valor" id="titulo"></span>
+          </div>
 
-            <div class="campo autor">
-                <span class="label">Autor(a):</span>
-                <span class="valor" id="autor"></span>
-            </div>
+          <div class="campo autor">
+            <span class="label">Autor(a):</span>
+            <span class="valor" id="autor"></span>
+          </div>
 
-            <div class="campo genero">
-                <span class="label">Gênero:</span>
-                <span id="genero"></span>
-            </div>
+          <div class="campo genero">
+            <span class="label">Gênero:</span>
+            <span id="genero"></span>
+          </div>
 
-            <div class="campo paginas">
-                <span class="label">Quantidade de páginas:</span>
-                <span id="qtdPag"></span>
-            </div>
+          <div class="campo paginas">
+            <span class="label">Quantidade de páginas:</span>
+            <span id="qtdPag"></span>
+          </div>
 
-            <div class="campo inicio">
-                <span>Data de início:</span>
-                <span id="dtInicio"></span>
-            </div>
+          <div class="campo inicio">
+            <span>Data de início:</span>
+            <span id="dtInicio"></span>
+          </div>
 
-            <div class="campo fim">
-                <span class="label">Data de fim:</span>
-                <span id="dtFim"></span>
-            </div>
+          <div class="campo fim">
+            <span class="label">Data de fim:</span>
+            <span id="dtFim"></span>
+          </div>
 
         </div>
         <div class="botoes">
@@ -86,27 +88,70 @@
           <button class="btn" id="botao-remover">Remover</button>
           <button class="btn" id="botao-adicionarSessao">Adicionar Sessão</button>
         </div>
-    </div>
+      </div>
 
-</section>
-<section class="card-opiniao">
+    </section>
+    <section class="card-opiniao">
 
-    <button class="btn-opiniao" id="btnOpiniao">
+      <button class="btn-opiniao" id="btnOpiniao">
         <span>&darr;</span>
         O que eu achei da leitura
         <span>&darr;</span>
-    </button>
+      </button>
 
-    <div class="conteudo-opiniao opnOculto" id="conteudoOpiniao">
+      <div class="conteudo-opiniao opnOculto" id="conteudoOpiniao">
         <div class="opiniao" id="opiniao"></div>
-    </div>
+      </div>
 
-</section>
+    </section>
 
-<div id="listaSessoes"></div>
+    <div id="listaSessoes"></div>
   </main>
 
-    <div class="modal-overlay">
+  <div class="modal-overlay ativo" id="form-adicionar-sessao">
+    <div class="modal adicionar">
+      <div class="modal-header-adicionar">
+        <div class="foto">
+          <img src="../assets/images/icons8-open-book.png" alt="icon livro aberto">
+        </div>
+        <div class="modal-header-text">
+          <p>Criar Sessão de Leitura</p>
+          <p>Registre seu progresso na leitura do livro.</p>
+        </div>
+      </div>
+      <div>
+        <form id="form-sessao" class="form-sessao">
+          <div class="campo2">
+            <label for="paginas">Quantidade de páginas lidas:</label>
+
+            <input class="input" type="number" id="paginas" name="qtdPaginas" required min="1" max="100000" step="1"
+              placeholder="Ex.: 320">
+          </div>
+
+          <div class="campo2">
+            <label for="comentario">Comentário:</label>
+
+            <textarea id="comentario" name="comentario" rows="8" maxlength="1000"
+              placeholder="Escreva um comentário sobre sua leitura..."></textarea>
+          </div>
+
+
+          <div class="botoes-modal-adicionar">
+            <button type="button" id="btn-cancelar-adicao-sessao" class="btn-modal">
+              Cancelar
+            </button>
+
+            <button type="submit" id="btn-add-sessao" class="btn-modal roxo">
+              Adicionar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal-overlay">
     <div class="modal">
       <div class="modal-header">
         <img src="../assets/images/icons8-trash-50.png" alt="icon lixeira">
@@ -128,5 +173,5 @@
   <footer>
   </footer>
 </body>
-    
+
 </html>
