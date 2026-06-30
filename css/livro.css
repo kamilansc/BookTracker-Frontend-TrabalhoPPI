@@ -17,6 +17,9 @@ main {
   cursor: pointer;
 }
 
+#voltarInicio:hover {
+  color: var(--text-muted);
+}
 
 .card-infLivro {
   width: 80%;
@@ -81,11 +84,26 @@ main {
   border-radius: 999px;
 }
 
+.container-progresso {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+#porcentagem {
+    min-width: 3rem;
+    font-weight: 600;
+    color: #8F7DFF;
+}
+
 .dados-livro {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 3rem;
   row-gap: 1rem;
+
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .titulo,
@@ -94,9 +112,9 @@ main {
 }
 
 .campo {
-  display: grid;
-  grid-template-columns: 11rem 1fr;
-  align-items: start;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
 }
 
 .botoes {
@@ -120,6 +138,12 @@ main {
 
   cursor: pointer;
   transition: 0.2s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #8F7DFF;
+  border: 2px solid #8F7DFF;
 }
 
 /* Opinião */
@@ -203,20 +227,15 @@ main {
 .dados-sessao {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .dados-sessao p {
   margin: 0;
 }
 
-.label {
-  font-weight: 500;
-}
-
-.valor {
-  color: var(--text-muted);
-}
 
 .comentario-sessao {
   width: 100%;
@@ -230,6 +249,10 @@ main {
   background: #F2EEFF;
   border-radius: 1rem;
   text-align: center;
+
+  color: var(--on-surface);
+  font-weight: 500;
+  text-align: justify;
 }
 
 .sem-sessoes {
@@ -243,4 +266,122 @@ main {
   background: #fff;
   border: 2px solid #DDD5FF;
   border-radius: var(--radius-sm);
+}
+
+.opnOculto {
+  display: none;
+}
+
+.opiniao {
+  color: var(--on-surface);
+  font-weight: 500;
+  text-align: justify;
+
+  display: flex;
+  align-items: center;
+}
+
+.sessaoLeitura {
+    color: var(--on-surface)
+}
+
+/*-------------------------------*/
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(238, 231, 240, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.modal-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: relative;
+  width: 90%;
+  height: 280px;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: aparecer 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-msg {
+  font-size: 1.2rem;
+}
+
+.modal-header img {
+  margin-left: 2rem;
+  border: solid 1px #8f7dff;
+  border-radius: var(--radius-sm);
+}
+
+.modal-header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px gray;
+}
+
+.botoes-modal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-modal {
+  border: solid 1px #8f7dff;
+  height: 40px;
+  width: 122px;
+  border-radius: var(--radius-sm);
+  background-color: #f7f4ff;
+  cursor: pointer;
+}
+
+.btn-modal.vermelho {
+  background-color: #d9534f;
+  border: none;
+  color: #fff;
+}
+
+.btn-modal:hover {
+  background-color: #d1caff;
+}
+
+.btn-modal.vermelho:hover {
+  background-color: #c30600;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }

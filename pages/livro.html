@@ -6,6 +6,7 @@
     <title>Livro</title>
         
     <script defer src = "../javascript/components/clock.js"></script>
+    <script defer src="../javascript/components/livro.js"></script>
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/livro.css">
 </head>
@@ -32,8 +33,14 @@
     </div>
 
     <div class="lado-direito">
-      <div class="barra-progresso">
-        <div class="progresso"></div>
+      <div class="container-progresso">
+
+          <div class="barra-progresso">
+              <div class="progresso"></div>
+          </div>
+
+          <span id="porcentagem">0%</span>
+
       </div>
 
         <div class="dados-livro">
@@ -50,46 +57,68 @@
 
             <div class="campo genero">
                 <span class="label">Gênero:</span>
-                <span class="valor" id="genero"></span>
+                <span id="genero"></span>
             </div>
 
             <div class="campo paginas">
                 <span class="label">Quantidade de páginas:</span>
-                <span class="valor" id="qtdPag"></span>
+                <span id="qtdPag"></span>
             </div>
 
             <div class="campo inicio">
-                <span class="label">Data de início:</span>
-                <span class="valor" id="dtInicio"></span>
+                <span>Data de início:</span>
+                <span id="dtInicio"></span>
             </div>
 
             <div class="campo fim">
                 <span class="label">Data de fim:</span>
-                <span class="valor" id="dtFim"></span>
+                <span id="dtFim"></span>
             </div>
 
         </div>
         <div class="botoes">
-          <button class="btn">Atualizar</button>
-          <button class="btn">Remover</button>
-          <button class="btn">Adicionar Sessão</button>
+          <button class="btn" id="botao-atualizar">Atualizar</button>
+          <button class="btn" id="botao-remover">Remover</button>
+          <button class="btn" id="botao-dicionarSessao">Adicionar Sessão</button>
         </div>
     </div>
 
 </section>
 <section class="card-opiniao">
 
-    <button class="btn-opiniao">
-        ⌄ O que eu achei da leitura ⌄
+    <button class="btn-opiniao" id="btnOpiniao">
+        <span>&darr;</span>
+        O que eu achei da leitura
+        <span>&darr;</span>
     </button>
 
-    <div class="conteudo-opiniao">
-        <div id="opiniao"></div>
+    <div class="conteudo-opiniao opnOculto" id="conteudoOpiniao">
+        <div class="opiniao" id="opiniao"></div>
     </div>
 
 </section>
+
 <div id="listaSessoes"></div>
   </main>
+
+    <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img src="../assets/images/icons8-trash-50.png" alt="icon lixeira">
+        <div class="modal-header-text">
+          <p>Deletar livro</p>
+          <p>Esta ação não poderá ser desfeita.</p>
+        </div>
+      </div>
+
+      <p class="modal-msg">Tem certeza que deseja excluir esse livro?</p>
+
+      <div class="botoes-modal">
+        <button class="btn-modal" id="btn-cancelar-modal">Cancelar</button>
+        <button class="btn-modal vermelho" id="btn-deletar">Deletar</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
   </footer>
