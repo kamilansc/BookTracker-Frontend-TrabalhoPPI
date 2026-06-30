@@ -28,7 +28,7 @@ export function atualizarCardUltimaSessao(ultimaSessao) {
   const campoPages = document.getElementById("session-pages");
   const campoComment = document.getElementById("session-comment");
 
-  const data = new Date(ultimaSessao.dataSessao).toLocaleDateString("pt-BR");
+  const data = new Date(ultimaSessao.dataSessao).toLocaleDateString("pt-BR", {timeZone: "UTC"});
   campoData.innerText = `Data da sessão: ${data}`;
   campoPages.innerText = `${ultimaSessao.qtdPaginas} páginas lidas`;
   campoComment.innerText = ultimaSessao.comentario;

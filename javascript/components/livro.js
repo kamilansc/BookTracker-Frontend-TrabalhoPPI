@@ -105,10 +105,12 @@ async function carregarSessoes() {
 
 function formatarData(data) {
   if (!data) return "-";
-
+  
   let dataFormatada = new Date(data);
-
-  return dataFormatada.toLocaleDateString("pt-BR");
+  
+  dataFormatada = dataFormatada.toLocaleDateString("pt-BR", {timeZone: "UTC"})
+  return dataFormatada;
+  // return dataFormatada.toLocaleDateString("pt-BR", {timeZone: "UTC"});
 }
 
 function atualizarBarraProgresso(sessoes) {
