@@ -2,7 +2,7 @@ function Qselector(q) {
     return document.querySelector(q);
 }
 
-export function criarCard(livro) {
+export function criarCard(livro, progresso) {
     return `
         <div class="book-card">
             <div class="book-header">
@@ -15,12 +15,13 @@ export function criarCard(livro) {
             </div>
 
             <div class="book-progress">
-                <div class="progress-bar"></div>
-                <p class="percent"></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:${progresso}%"></div>
+                </div>
             </div>
 
             <div class="book-buttons">
-                <button>Sessões</button>
+                <button onclick="irParaSessoes(${livro.id})">Sessões</button>
                 <button>Editar</button>
                 <button>Nova Sessão</button>
             </div>
