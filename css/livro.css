@@ -17,6 +17,10 @@ main {
   cursor: pointer;
 }
 
+#voltarInicio:hover {
+  color: var(--text-muted);
+}
+
 .card-infLivro {
   width: 80%;
   min-height: 19rem;
@@ -28,7 +32,7 @@ main {
   gap: 2.5rem;
 
   background: #fff;
-  border: 2px solid #ddd5ff;
+  border: 2px solid #DDD5FF;
   border-radius: var(--radius-sm);
 }
 
@@ -40,7 +44,7 @@ main {
   justify-content: center;
   align-items: center;
 
-  background: #f2eeff;
+  background: #F2EEFF;
   border-radius: 1rem;
 }
 
@@ -68,7 +72,7 @@ main {
   height: 0.7rem;
   margin-bottom: 1rem;
 
-  background: #cfcfcf;
+  background: #CFCFCF;
   border-radius: 999px;
 }
 
@@ -76,8 +80,20 @@ main {
   width: 65%;
   height: 100%;
 
-  background: #8f7dff;
+  background: #8F7DFF;
   border-radius: 999px;
+}
+
+.container-progresso {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+#porcentagem {
+    min-width: 3rem;
+    font-weight: 600;
+    color: #8F7DFF;
 }
 
 .dados-livro {
@@ -85,6 +101,9 @@ main {
   grid-template-columns: 1fr 1fr;
   column-gap: 3rem;
   row-gap: 1rem;
+
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .titulo,
@@ -93,9 +112,9 @@ main {
 }
 
 .campo {
-  display: grid;
-  grid-template-columns: 11rem 1fr;
-  align-items: start;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
 }
 
 .botoes {
@@ -108,7 +127,7 @@ main {
   flex: 1;
   padding: 0.7rem;
 
-  background: #8f7dff;
+  background: #8F7DFF;
   color: #fff;
 
   border: 0;
@@ -119,6 +138,12 @@ main {
 
   cursor: pointer;
   transition: 0.2s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #8F7DFF;
+  border: 2px solid #8F7DFF;
 }
 
 /* Opinião */
@@ -134,7 +159,7 @@ main {
   background: #fff;
   color: var(--on-surface);
 
-  border: 2px solid #ddd5ff;
+  border: 2px solid #DDD5FF;
   border-radius: var(--radius-sm);
 
   font-size: 1rem;
@@ -149,7 +174,7 @@ main {
   padding: 1.5rem;
 
   background: #fff;
-  border: 2px solid #ddd5ff;
+  border: 2px solid #DDD5FF;
   border-radius: var(--radius-sm);
 }
 
@@ -174,7 +199,7 @@ main {
   gap: 1.5rem;
 
   background: #fff;
-  border: 2px solid #ddd5ff;
+  border: 2px solid #DDD5FF;
   border-radius: var(--radius-sm);
 }
 
@@ -202,20 +227,15 @@ main {
 .dados-sessao {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .dados-sessao p {
   margin: 0;
 }
 
-.label {
-  font-weight: 500;
-}
-
-.valor {
-  color: var(--text-muted);
-}
 
 .comentario-sessao {
   width: 100%;
@@ -226,9 +246,13 @@ main {
   justify-content: center;
   align-items: center;
 
-  background: #f2eeff;
+  background: #F2EEFF;
   border-radius: 1rem;
   text-align: center;
+
+  color: var(--on-surface);
+  font-weight: 500;
+  text-align: justify;
 }
 
 .sem-sessoes {
@@ -240,9 +264,28 @@ main {
   color: var(--text-muted);
 
   background: #fff;
-  border: 2px solid #ddd5ff;
+  border: 2px solid #DDD5FF;
   border-radius: var(--radius-sm);
 }
+
+.opnOculto {
+  display: none;
+}
+
+.opiniao {
+  color: var(--on-surface);
+  font-weight: 500;
+  text-align: justify;
+
+  display: flex;
+  align-items: center;
+}
+
+.sessaoLeitura {
+    color: var(--on-surface)
+}
+
+/*-------------------------------*/
 
 .modal-overlay {
   position: fixed;
